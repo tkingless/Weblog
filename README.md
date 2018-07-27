@@ -21,4 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
+  (1) if want to migrate db to production db,
+      bin/rails db:migrate RAILS_ENV=production
 * ...
