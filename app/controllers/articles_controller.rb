@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
   end
 
   def create
@@ -15,9 +16,12 @@ class ArticlesController < ApplicationController
     #@article = Article.new(params.require(:article).permit(:title,:content))
     @article = Article.new(article_params)
 
-    @article.save
-    #redirect to show action, see "rails routes"
-    redirect_to @article
+    if @article.save
+      #redirect to show action, see "rails routes"
+      redirect_to @article
+    else
+      render 'new'
+    end
   end
 
   def show
