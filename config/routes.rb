@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
   ##/ get this right: get 'welcome/', to redirect('welcome#index')
   get 'welcome' => redirect('welcome/index')
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   root :to => 'welcome#index'
   get '*path' => redirect('/')
 end
