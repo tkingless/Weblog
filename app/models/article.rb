@@ -4,6 +4,6 @@
 class Article < ApplicationRecord
   ##/How to use ActiveRecord? here the model attribute not auto declared
   ##/Validation, https://guides.rubyonrails.org/active_record_validations.html:
-  has_many: comments
+  has_many :comments
   validates :title, presence: true, length: { minimum: 5 }
 end
