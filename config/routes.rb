@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+
+  match ':controller(/:action(/:id(.:format)))', :via => :all
+
   root :to => 'welcome#index'
   get '*path' => redirect('/')
 end
