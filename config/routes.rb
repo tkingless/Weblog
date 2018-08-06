@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  ##! adding this allow simpler link_to call and redirect call
+  resources :events
+
   match ':controller(/:action(/:id(.:format)))', :via => :all
 
   root :to => 'welcome#index'
